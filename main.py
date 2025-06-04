@@ -10,8 +10,9 @@ app = FastAPI(title="Pipeline Builder API", version="1.0.0")
 app.add_middleware(
     CORSMiddleware,
      allow_origins=[
-        os.environ.get("VITE_REACT_APP_FRONTEND_URL", "http://localhost:3000"),
-        "http://localhost:3000"
+        os.environ.get("VITE_REACT_APP_FRONTEND_URL", "http://localhost:5173"),
+        "http://localhost:3000", # Local Vite dev server
+        "http://localhost:5173" # Backup for other React dev servers
     ],
     allow_credentials=True,
     allow_methods=["*"],
